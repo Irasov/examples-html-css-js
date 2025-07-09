@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.4/css/all.css">
+    <title>Раскрывающиеся элементы</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <div class="header__body">
+            <h1 class="header__title">Современные способы переключения контента</h1>
+          </div>
+        </div>
+      </header>
+      <main class="mainpage">
+        <div class="mainpage__body">
+          <section class="collapse">
+            <div class="collapse__container">
+              <div class="collapse__body">
+                <h2 class="collapse__title title">
+                  Раскрывающиеся элементы &lt;details&gt; и  &lt;summary&gt; &lt;/summary&gt;
+                </h2>
+                <p class="collapse__subtitle subtitle">
+                  Сценарий использования: доступное "резюмирование" контента с возможностью переключения деталей содержимого независимо друг от друга или в виде "аккордеона".
+                </p>
+                <div class="collapse__markup">
+                  <h3 class="collapse__description description">Разметка раскрывающихся элементов</h3>
+                  <div class="collapse__example example">
+                    <pre>
+                      <code>
+&lt;details&gt;
+  &lt;summary&gt;Content summary (всегда видно)</summary>
+  Content (видимость переключается при нажатии на summary)
+&lt;/details&gt;
+                      </code>
+                    </pre>
+                    <details>
+                      <summary>Content summary (всегда видно)</summary>
+                      Content (видимость переключается при нажатии на summary)
+                    </details>
+                  </div>
+                </div>
+                <div class="collapse__style">
+                  <h3 class="collapse__description description">
+                    Стилизация раскрывающихся элементов
+                  </h3>
+                  <p class="collapse__text text">
+                    Будем честны, нам всем хочется избавиться от этого раздражающего маркера. Сделать это можно, установив свойство display для  &lt;summary&gt; в любое значение, кроме list-item
+                  </p>
+                  <div class="collapse__example example">
+                    <pre>
+                      <code>
+summary {
+  display: block; /* Или любое другое значение, кроме list-item*/
+}
+                      </code>
+                    </pre>
+                    <details class="collapse__not-marker">
+                        <summary>Content summary (всегда видно)</summary>
+                        Content (видимость переключается при нажатии на summary)
+                    </details>
+                  </div>
+                  <p class="collapse__text text">
+                    Другим вариантом может быть изменение внешнего вида маркера. В приведенном ниже примере используется ::after
+                  </p>
+                  <div class="collapse__example example">
+                    <pre>
+                      <code>
+.collapse__style-marker {
+  position: relative;
+  cursor: pointer;
+}
+.collapse__style-marker summary {
+  display: block;
+}
+.collapse__style-marker summary::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  left: 250px;
+  top: 0;
+  background: url(down.svg) center / cover no-repeat;
+  transition: all 0.3s ease 0s;
+}
+.collapse__style-marker[open] summary::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  left: 250px;
+  top: 0;
+  background: url(up.svg) center / cover no-repeat;
+  transition: all 0.3s ease 0s;
+}
+                      </code>
+                    </pre>
+                    <details class="collapse__style-marker">
+                        <summary>Content summary (всегда видно)</summary>
+                        Content (видимость переключается при нажатии на summary)
+                    </details>
+                  </div>
+                  <p class="collapse__text text">
+                    Для создания "аккордеона" необходимо присвоить нескольким раскрывающимся элементам атрибут name с одинаковым значение
+                  </p>
+                  <div class="collapse__example example">
+                    <details name="starWars" open>
+                      <summary>Prequels</summary>
+                      <ul>
+                        <li>Episode I: The Phantom Menace</li>
+                        <li>Episode II: Attack of the Clones</li>
+                        <li>Episode III: Revenge of the Sith</li>
+                      </ul>
+                    </details>
+
+                    <details name="starWars">
+                      <summary>Originals</summary>
+                      <ul>
+                        <li>Episode IV: A New Hope</li>
+                        <li>Episode V: The Empire Strikes Back</li>
+                        <li>Episode VI: Return of the Jedi</li>
+                      </ul>
+                    </details>
+
+                    <details name="starWars">
+                      <summary>Sequels</summary>
+                      <ul>
+                        <li>Episode VII: The Force Awakens</li>
+                        <li>Episode VIII: The Last Jedi</li>
+                        <li>Episode IX: The Rise of Skywalker</li>
+                      </ul>
+                    </details>
+
+                    <details name="newWars">
+                      <summary>Other name</summary>
+                      <ul>
+                        <li>other list 1</li>
+                        <li>other list 2</li>
+                        <li>other list 3</li>
+                      </ul>
+                    </details>
+                  </div>
+                  <p class="collapse__text text">
+                    С помощью FLEX контейнера их можно превратить в горизонтальные вкладки
+                  </p>
+                  <div class="collapse__example example">
+                    <div class="collapse__flex">
+                      <details name="starWars" open>
+                        <summary>Prequels</summary>
+                        <ul>
+                          <li>Episode I: The Phantom Menace</li>
+                          <li>Episode II: Attack of the Clones</li>
+                          <li>Episode III: Revenge of the Sith</li>
+                        </ul>
+                      </details>
+
+                      <details name="starWars">
+                        <summary>Originals</summary>
+                        <ul>
+                          <li>Episode IV: A New Hope</li>
+                          <li>Episode V: The Empire Strikes Back</li>
+                          <li>Episode VI: Return of the Jedi</li>
+                        </ul>
+                      </details>
+
+                      <details name="starWars">
+                        <summary>Sequels</summary>
+                        <ul>
+                          <li>Episode VII: The Force Awakens</li>
+                          <li>Episode VIII: The Last Jedi</li>
+                          <li>Episode IX: The Rise of Skywalker</li>
+                        </ul>
+                      </details>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="dialog">
+            <div class="dialog__container">
+              <div class="dialog__body">
+                <h2 class="dialog__title title">
+                  Диалоговые окна (&lt;dialog&gt;)
+                </h2>
+                <p class="dialog__text text">
+                  Теперь, когда у нас есть Popover API для создания немодальных окон (non-modal overlays), диалоговые окна следует считать модальными, хотя метод show() по-прежнему позволяет реализовывать немодальные диалоговые окна. Преимуществом атрибута popover по сравнению с элементом &lt;dialog&gt; является возможность создания немодальных оверлеев без использования JS. Таким образом, немодальные диалоговые окна теряют свою актуальность, так как требуют выполнения кода на JS.
+                </p>
+                <p class="dialog__text text">
+                   Для ясности: модальное окно — это оверлей, который делает основное содержание страницы неактивным (инертным), тогда как немодальные оверлеи позволяют взаимодействовать с основной страницей.
+                </p>
+                <div class="dialog__example example">
+                  <pre>
+                    <code>
+//HTML
+
+&lt;button data-dialog="dialogA">Open dialogA&lt;/button&gt;
+&lt;dialog id="dialogA" class="dialog__modal"&gt;
+  &lt;button class="closeDialog">Close dialogA&lt;/button&gt;
+&lt;/dialog>
+                    </code>
+                  </pre>
+                  <pre>
+                    <code>
+//CSS
+
+.dialog__modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+//Блокировка прокрутки страницы при открытом диалоговом окне
+body:has(dialog:modal) {
+  overflow: hidden;
+}
+//Стилизация фона диалогового окна
+::backdrop {
+  background: hsl(0 0 0 / 90%);
+  /* Интересное свойство, предназначенное только для фонов */
+  backdrop-filter: blur(3px); 
+}
+                    </code>
+                  </pre>
+                  <pre>
+                    <code>
+//JAVASCRIPT
+
+// Перебираем все элементы с атрибутом data-dialog
+document.querySelectorAll('[data-dialog]')
+  .forEach((button) => {
+    // Обрабатываем взаимодействие (клик)
+    button.addEventListener('click', () => {
+      // Выбираем соответствующее диалоговое окно
+      const dialog = document.querySelector(`#${button.dataset.dialog}`);
+    // Открываем его
+    dialog.showModal();
+    // Закрываем
+    dialog.querySelector(
+      '.closeDialog').addEventListener('click', () => dialog.close());
+  });
+});
+                    </code>
+                  </pre>
+                </div>
+                <div class="dialog__example example">
+                  <button data-dialog="dialogA">Open dialogA</button>
+                  <dialog id="dialogA" class="dialog__modal">
+                    <button class="closeDialog">Close dialogA</button>
+                </dialog>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="popover">
+            <div class="popover__container">
+              <div class="popover__body">
+                <div class="popver__title title">
+                  Popover API (&lt;element popover&gt;)
+                </div>
+                <p class="popover__text text">
+                  По сути, это всплывающие окна. Могут использоваться в качестве таких элементов, как подсказки (tooltips) (или переключаемые подсказки (toggletips) — важно понимать разницу между ними), уведомления, переключаемая навигация и другие немодальные оверлеи, которые позволяют сохранять доступ к основной странице. Хотя эти варианты и отличаются от сценариев использования диалоговых окон, поповеры обладают множеством достоинств. Функционально они аналогичны диалоговым окнам, но не являются модальными и не требуют использования JS.
+                </p>
+                <p class="popover__description description">
+                  Разметка поповеров
+                </p>
+                <p class="popover__text text">
+                  Для начала поповер должен иметь идентификатор, а также атрибут popover с одним из значений: manual (это означает, что клик вне поповера не закрывает его), 
+                  auto (клик вне поповера закрывает его) или без значения (что эквивалентно значению auto). Для соблюдения семантики поповер можно оформить в виде элемента &lt;dialog&gt;.
+                </p>
+                <p class="popver__text text">
+                  Следующим шагом добавляем атрибут popovertarget к элементу &lt;button&gt; или &lt;input type="button"&gt;, который будет управлять видимостью поповера. Значение этого атрибута должно совпадать со значением атрибута popover:
+                </p>
+                <div class="popover__example example">
+                  <pre>
+                    <code>
+&lt;button popovertarget="tooltipA">Show tooltipA&lt;button&gt;
+&lt;dialog id="tooltipA" popover>
+  &lt;button popovertarget="tooltipA">Hide tooltipA&lt;button&gt;
+&lt;/dialog&gt;
+                    </code>
+                  </pre>
+                </div>
+                <div class="popover__example example">
+                  <button popovertarget="tooltipA">Show tooltipA</button>
+                  <dialog id="tooltipA" popover class="popver__dialog">
+                    <button popovertarget="tooltipA">Hide tooltipA</button>
+                  </dialog>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__body">
+            <a href="https://habr.com/ru/companies/timeweb/articles/867142/" class="fotter__link" target="_blank">
+              Оригинальная статья
+            </a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,301 @@
+/* Обнуление стилей */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+img {
+  vertical-align: top;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-style: 16px;
+}
+
+body {
+  line-height: 1;
+  color: #000;
+}
+body._lock {
+  overflow: hidden;
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  position: relative;
+}
+
+/***************************************/
+.mainpage {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+[class*='__container'] {
+  margin: 0 auto;
+  max-width: 1260px;
+  padding: 0 10px;
+}
+
+.header {
+}
+.header__container {
+}
+.header__body {
+  padding: 15px 0;
+  background-color: #d6e6ff;
+  border-radius: 15px 15px 0 0;
+}
+.header__title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+  color: #525e75;
+}
+
+.collapse {
+}
+.collapse__container {
+}
+.collapse__body {
+  padding: 20px 10px;
+  background-color: #ffffea;
+  color: #6c584c;
+}
+.collapse__title {
+  margin: 0 0 15px 0;
+}
+.title {
+  font-size: 28px;
+  font-weight: 500;
+  color: #000;
+}
+.collapse__subtitle {
+  margin: 0 0 15px 0;
+}
+.subtitle {
+  font-size: 18px;
+  line-height: 1.2;
+}
+.collapse__markup {
+}
+.collapse__description {
+}
+.description {
+  padding: 10px 0 0 10px;
+  font-size: 18px;
+  line-height: 1.2;
+  color: #000;
+}
+.collapse__example {
+}
+.example {
+  padding: 10px 0 20px 0;
+}
+.collapse__style {
+}
+.collapse__text {
+}
+.text {
+  font-size: 16px;
+  padding: 15px 0 0 0;
+  line-height: 1.5;
+}
+.collapse__not-marker summary {
+  display: block;
+}
+.collapse__style-marker {
+  position: relative;
+  cursor: pointer;
+}
+.collapse__style-marker summary {
+  display: block;
+}
+.collapse__style-marker summary::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  left: 250px;
+  top: 0;
+  background: url(down.svg) center / cover no-repeat;
+  transition: all 0.3s ease 0s;
+}
+.collapse__style-marker[open] summary::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: absolute;
+  left: 250px;
+  top: 0;
+  background: url(up.svg) center / cover no-repeat;
+  transition: all 0.3s ease 0s;
+}
+.collapse__flex {
+  display: flex;
+  position: relative;
+  gap: 1ch;
+}
+
+.collapse__flex details {
+  min-height: 106px; /* Предотвращает смещение контента */
+}
+.collapse__flex details[open] summary,
+.collapse__flex details[open]::details-content {
+  background: #fff0d4;
+}
+.collapse__flex details[open]::details-content {
+  position: absolute;
+  left: 0;
+}
+/***************************************/
+.dialog {
+}
+.dialog__container {
+}
+.dialog__body {
+  padding: 20px 10px;
+  background-color: #fbe0e0;
+  color: #6c584c;
+}
+.dialog__title {
+}
+.title {
+}
+.dialog__text {
+}
+.text {
+}
+.dialog__example {
+}
+.example {
+}
+.dialog__modal {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.closeDialog {
+}
+/***************************************/
+.popover {
+}
+.popover__container {
+}
+.popover__body {
+  padding: 20px 10px;
+  background-color: #e5d4ef;
+  color: #6c584c;
+}
+.popver__title {
+}
+.title {
+}
+.popover__text {
+}
+.text {
+}
+.popover__description {
+}
+.description {
+}
+.popver__text {
+}
+.popover__example {
+}
+.example {
+}
+.popver__dialog {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/***************************************/
+button {
+  padding: 10px 10px;
+  background-color: #d7f9f8;
+  border-radius: 10px;
+}
+/***************************************/
+.footer {
+}
+.footer__container {
+}
+.footer__body {
+  padding: 30px 10px;
+  background-color: #d6e6ff;
+  border-radius: 0 0 15px 15px;
+}
+.fotter__link {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* 
+  Чтобы предотвратить прокрутку страницы, когда диалоговое окно открыто, достаточно добавить одну строчку CSS:
+*/
+body:has(dialog:modal) {
+  overflow: hidden;
+}
+/*
+  Фон играет важную роль в снижении отвлечения внимания от контента, находящегося под верхним слоем (это касается только модальных окон). Его стили можно изменить следующим образом:
+*/
+::backdrop {
+  backdrop-filter: blur(3px);
+  background: hsl(0 0 0 / 90%);
+}
+
+@media (max-width: 677.98px) {
+  code {
+    font-size: 8px;
+  }
+}
