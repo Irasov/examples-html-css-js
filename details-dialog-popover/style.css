@@ -83,16 +83,28 @@ body._lock {
 .header__container {
 }
 .header__body {
+  text-align: center;
   padding: 15px 0;
   background-color: #d6e6ff;
   border-radius: 15px 15px 0 0;
 }
 .header__title {
+  margin: 0 0 20px 0;
   text-align: center;
   font-size: 24px;
   font-weight: 900;
   color: #525e75;
 }
+.header__link {
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #d7f9f8;
+  color: #000;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+/************************************/
 
 .collapse {
 }
