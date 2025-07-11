@@ -4,18 +4,25 @@
   background-color: #e5d4ef;
   padding: 20px 0;
 }
-
+.one__title {
+  padding: 0 0 10px 10px;
+}
+.one__text {
+  padding: 0 0 10px 10px;
+}
 .one__items {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
-.snip1361 {
+/****Эффект****/
+.one__item {
+  margin: 10px;
+}
+.item-one {
   font-family: 'Quattrocento', Arial, sans-serif;
   position: relative;
   overflow: hidden;
-  margin: 10px;
   min-width: 230px;
   max-width: 315px;
   width: 100%;
@@ -24,24 +31,24 @@
   line-height: 1.4em;
   font-size: 16px;
 }
-.snip1361 * {
+.item-one * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
 }
-.snip1361 img {
+.item-one img {
   max-width: 100%;
   vertical-align: top;
 }
-.snip1361 figcaption {
+.item-one figcaption {
   position: absolute;
   top: calc(77%);
   width: 100%;
   background-color: #ffffff;
   padding: 15px 25px 65px;
 }
-.snip1361 figcaption:before {
+.item-one figcaption:before {
   position: absolute;
   content: '';
   z-index: 2;
@@ -52,23 +59,23 @@
   background-image: -webkit-linear-gradient(top, transparent 0%, #ffffff 100%);
   background-image: linear-gradient(to bottom, transparent 0%, #ffffff 100%);
 }
-.snip1361 h3,
-.snip1361 p {
+.item-one h3,
+.item-one p {
   margin: 0 0 10px;
 }
-.snip1361 h3 {
+.item-one h3 {
   font-weight: 300;
   font-size: 1.4em;
   line-height: 1.2em;
   font-family: 'Oswald', Arial, sans-serif;
   text-transform: uppercase;
 }
-.snip1361 p {
+.item-one p {
   font-size: 0.9em;
   letter-spacing: 1px;
   opacity: 0.9;
 }
-.snip1361 a {
+.item-one a {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -76,6 +83,6 @@
   right: 0;
   z-index: 2;
 }
-.snip1361:hover figcaption {
+.item-one:hover figcaption {
   top: 80px;
 }
