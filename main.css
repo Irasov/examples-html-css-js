@@ -84,7 +84,7 @@ body._lock {
 }
 .header__body {
   text-align: center;
-  padding: 15px 0;
+  padding: 15px 0 25px 0;
   background-color: #d6e6ff;
   border-radius: 15px 15px 0 0;
 }
