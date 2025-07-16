@@ -124,3 +124,17 @@ body._lock {
   padding: 15px 0 0 0;
   line-height: 1.5;
 }
+
+/*******FOOTER*******/
+.footer {
+}
+.footer__container {
+}
+.footer__body {
+  padding: 50px 10px;
+  background-color: #d6e6ff;
+  border-radius: 0 0 15px 15px;
+  text-align: center;
+}
+.header__link {
+}
