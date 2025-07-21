@@ -13,7 +13,7 @@
 .list__items {
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
+  row-gap: 35px;
 }
 .list__item {
   position: relative;
