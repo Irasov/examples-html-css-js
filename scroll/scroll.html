@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Scroll</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="header__container">
+          <div class="header__body">
+            <h1 class="header__title">Scroll</h1>
+            <a href="../index.html" class="header__link link">На Главную</a>
+          </div>
+        </div>
+      </header>
+      <main class="mainpage">
+        <div class="mainpage__body">
+          <section class="one">
+            <div class="one__container">
+              <div class="one__body">
+                <h2 class="one__title title">Выезжающие эллементы при скролле</h2>
+                <div class="one__example example">
+                  <div class="example__text">
+                    <p>Используемые методы:</p>
+                    <p>
+                      - Метод <b>Element.getBoundingClientRect()</b> возвращает размер элемента и
+                      его позицию относительно viewport (часть страницы, показанная на экране, и
+                      которую мы видим).
+                    </p>
+                    <p>
+                      Данный метод возвращает объект DOMRect, который является объединением
+                      прямоугольников, возвращаемых методом getClientRects() для данного элемента,
+                      т.е. CSS border-boxes (css-коробок в рамках), связанных с этим элементом.
+                      Результатом является самый маленький прямоугольник, в котором содержится весь
+                      элемент с read-only left, top, right, bottom, x, y, width и height свойствами,
+                      описывающие это в пикселях. Все свойства, кроме width и height, являются
+                      относительными к верхнему левому углу viewport-а.
+                    </p>
+                    <p>
+                      - Метод <b>Window.innerHeight</b> Высота (в пикселях) области просмотра окна
+                      браузера, включая, если отображается, горизонтальную полосу прокрутки.
+                    </p>
+                  </div>
+                  <div class="example__items">
+                    <div class="item">Item 1</div>
+                    <div class="item">Item 2</div>
+                    <div class="item">Item 3</div>
+                    <div class="item">Item 4</div>
+                    <div class="item">Item 5</div>
+                    <div class="item">Item 6</div>
+                    <div class="item">Item 7</div>
+                    <div class="item">Item 8</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      <footer class="footer">
+        <div class="footer__container">
+          <div class="footer__body">
+            <a href="../index.html" class="footer__link link">На Главную</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
