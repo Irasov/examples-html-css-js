@@ -64,6 +64,21 @@ body {
 .layer__header {
   z-index: 10;
   transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  will-change: transform;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #e7e7e0;
+}
+
+.layers__title {
+  font-size: calc(var(--index) * 2.5);
+  letter-spacing: calc(var(--index) / 2.25);
+}
+
+.layers__caption {
+  font-size: calc(var(--index) / 1.175);
+  letter-spacing: calc(var(--index) / 3.5);
+  margin-top: calc(var(--index) * -0.75);
 }
 
 .main-article {
