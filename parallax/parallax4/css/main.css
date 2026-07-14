@@ -59,6 +59,28 @@ body {
 
 .layers__front {
   transform: translate3d(0, calc(var(--scrollTop) / 5.7), 0);
+  z-index: 40;
+}
+
+.layer__header {
+  z-index: 30;
+  transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  will-change: transform;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--text);
+  text-shadow: 0 0 15px #9d822b;
+}
+
+.layers__title {
+  font-size: calc(var(--index) * 2.5);
+  letter-spacing: calc(var(--index) / 2.25);
+}
+
+.layers__caption {
+  font-size: calc(var(--index) / 1.175);
+  letter-spacing: calc(var(--index) / 3.5);
+  margin-top: calc(var(--index) * -0.75);
 }
 
 .mainpage {
