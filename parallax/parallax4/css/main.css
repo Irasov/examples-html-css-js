@@ -46,6 +46,7 @@ body {
   background-position: center;
   will-change: transform;
   z-index: 20;
+  transition: var(--transition);
 }
 
 .layers__base {
@@ -65,6 +66,7 @@ body {
 .layer__header {
   z-index: 30;
   transform: translate3d(0, calc(var(--scrollTop) / 2), 0);
+  transition: var(--transition);
   will-change: transform;
   text-transform: uppercase;
   font-weight: 900;
@@ -97,13 +99,12 @@ body {
   z-index: 50;
 }
 
-.mainpage__content {
-}
 .mainpage__title {
   text-transform: uppercase;
   font-size: calc(var(--index) * 1.8);
   letter-spacing: calc(var(--index) / 7.5);
   transform: var(--main-article-transform);
+  transition: var(--transition);
   will-change: transform;
 }
 .mainpage__subtitle {
@@ -111,6 +112,7 @@ body {
   font-size: calc(var(--index) * 0.9);
   margin-top: calc(var(--index) / 1.25);
   transform: var(--main-article-transform);
+  transition: var(--transition);
   will-change: transform;
 }
 .copy {
