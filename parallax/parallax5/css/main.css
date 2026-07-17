@@ -1,5 +1,5 @@
 @import '../css/grid.css';
-@import '../css/vars';
+@import '../css/vars.css';
 
 @import '../libs/btn/anim-menu-btn.css';
 
@@ -161,4 +161,91 @@ body {
   --anim-menu-btn-color: var(--gray-color);
   --anim-menu-btn-gap: 0.195em;
   --anim-menu-btn-width: 1.08em;
+}
+.header-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.header-content {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1;
+  flex-direction: column;
+}
+
+.header-content__slide {
+  position: absolute;
+}
+
+.header-content h1 {
+  font-size: calc(var(--index) * 11.95);
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+.header-content p {
+  max-width: 560px;
+  font-weight: 600;
+  line-height: 1.4;
+  display: inline-block;
+}
+
+.header-bottom {
+  min-height: 120px;
+}
+
+.letters .letter {
+  text-shadow: 25px 0 35px rgba(0 0 0 / 0.4);
+  position: relative;
+  margin-left: calc(var(--index) * -2.65);
+  right: calc(var(--index) * -2.65);
+  opacity: 0;
+  top: -5em;
+  transition:
+    opacity var(--transition),
+    top var(--transition);
+}
+
+.header-content__slide.active .letter {
+  opacity: 1;
+  top: 0;
+}
+
+.header-content__slide.active + * .letter {
+  top: 5em;
+}
+
+.header-content__info {
+  top: -18em;
+  position: relative;
+  opacity: 0;
+  transition:
+    opacity 1s ease,
+    top 1.25s ease;
+}
+
+.header-content__slide.active .header-content__info {
+  opacity: 1;
+  top: 0;
+}
+
+.header-content__slide:has(* + .active .header-content__info),
+.header-content__slide.active + * .header-content__info {
+  top: 18em;
+}
+
+.slider-ui {
+  pointer-events: none;
+}
+
+.logo,
+.main-menu,
+.button,
+.submenu {
+  pointer-events: auto;
 }
