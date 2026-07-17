@@ -14,3 +14,27 @@ body {
 .slider {
   height: 100%;
 }
+
+.slider__layer {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.slider__item {
+  overflow: hidden;
+  transform: scale(1.25) !important;
+  transition: 2s ease !important;
+}
+
+.slider__item:not(.swiper-slide-active) {
+  transform: scale(1) !important;
+}
+
+.slider-ui {
+  position: absolute;
+  z-index: 10;
+  inset: 0;
+}
