@@ -55,3 +55,13 @@ body {
 .option.active {
   flex-grow: var(--total-options);
 }
+
+/* Уточнение: данный брейкпоинт для max-width является sm. */
+/* max-width брейкпоинты имеют отступ (-0.02px), чтобы избежать перекрытия с min-width. */
+@media (max-width: 767.98px) {
+  .options {
+    flex-direction: column;
+    min-height: 100vh;
+    min-width: auto;
+  }
+}
