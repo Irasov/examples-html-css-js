@@ -35,7 +35,7 @@ body {
   top: 0;
   left: 0;
   height: 2px;
-  width: 35%;
+  width: 0%;
   background-color: var(--glow);
   z-index: 5;
   box-shadow: 0 0 12px var(--glow);
@@ -47,7 +47,7 @@ body {
   transform: translateX(-50%);
   z-index: 3;
   font-family: 'Inter', sans-serif;
-  font-size: 0.3rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   color: var(--mist);
   opacity: 0.7;
