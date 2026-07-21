@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="scripts/app.js" defer></script>
+  </head>
+  <body>
+    <div class="loader" id="loader">Loading the descent...</div>
+    <div class="progress" id="progress"></div>
+    <div class="hint" id="hint">Scroll to descend</div>
+    <div class="scroll-track" id="track">
+      <div class="stage">
+        <video src="./assets/videos/video.mp4" id="vid" muted playsinline preload="auto"></video>
+        <div class="caption active">
+          <div class="eyebrow">Surface</div>
+          <h2>Everything begins in light.</h2>
+          <p>The water is warm here, and forgiving</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
