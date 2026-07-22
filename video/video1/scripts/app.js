@@ -26,14 +26,20 @@ whenReady().then((duration) => {
   };
 
   let lastSeeck = -1;
+  let seeking = false;
 
   const setFrame = () => {
     const t = proxy.time;
-    if (Math.abs(t - lastSeeck) > 0.03) {
+    if (!seeking && Math.abs(t - lastSeeck) > 0.03) {
       vid.currentTime = t;
       lastSeeck = t;
+      seeking = true;
     }
   };
+
+  vid.addEventListener('seeked', () => {
+    seeking = false;
+  });
 
   const tl = gsap.timeline({
     defaults: {
