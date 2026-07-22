@@ -7,7 +7,7 @@ const captions = document.querySelectorAll('.caption');
 function whenReady() {
   return new Promise((resolve) => {
     const ready = () => {
-      const duration = vid.duration ? vid.duration : 8;
+      const duration = vid.duration ? vid.duration : 9;
       resolve(duration);
     };
     if (vid.readyState >= 1) {
@@ -25,14 +25,14 @@ whenReady().then((duration) => {
     time: 0,
   };
 
-  let lastSeeck = -1;
+  let lastSeek = -1;
   let seeking = false;
 
   const setFrame = () => {
     const t = proxy.time;
-    if (!seeking && Math.abs(t - lastSeeck) > 0.03) {
+    if (!seeking && Math.abs(t - lastSeek) > 0.03) {
       vid.currentTime = t;
-      lastSeeck = t;
+      lastSeek = t;
       seeking = true;
     }
   };

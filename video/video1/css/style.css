@@ -10,7 +10,7 @@
 }
 body {
   color: var(--mist);
-  font-family: 'Galasio', serif;
+  font-family: 'Gelasio', serif;
 }
 .loader {
   position: fixed;
@@ -89,9 +89,6 @@ video {
   opacity: 0;
   pointer-events: none;
 }
-.caption.active {
-  opacity: 1;
-}
 .eyebrow {
   font-family: 'Inter', sans-serif;
   letter-spacing: 0.42em;
@@ -100,7 +97,7 @@ video {
   color: var(--glow);
   margin-bottom: 1.1rem;
 }
-caption > * {
+.caption > * {
   max-width: 86vw;
 }
 .caption h2 {
