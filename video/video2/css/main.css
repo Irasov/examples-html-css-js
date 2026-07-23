@@ -3,3 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --index: calc(1vw + 1vh);
+  --swiper-theme-color: #4b4d53;
+  --swiper-navigation-size: 30px;
+  --swiper-navigation-sides-offset: 40px;
+  --swiper-pagination-bottom: 20px;
+  --swiper-pagination-color: #afb3c0;
+  --swiper-pagination-bullet-inactive-color: #36373c;
+  --swiper-pagination-bullet-inactive-opacity: 1;
+}
+body {
+  background-color: #000;
+  color: #fff;
+}
