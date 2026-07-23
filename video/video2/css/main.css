@@ -91,3 +91,54 @@ button {
 .video-background.change {
   opacity: 1;
 }
+
+/* Interface */
+
+.container {
+  margin: auto;
+  max-width: 840px;
+}
+.container-top {
+  display: flex;
+  justify-content: space-between;
+}
+.top-line {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  padding: 1.7rem 0;
+}
+.logo {
+  border: 3px solid #e1e6f7;
+  border-radius: 10em;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.75;
+}
+.logo img {
+  width: 25px;
+  height: auto;
+}
+.main-mnu {
+  display: flex;
+  margin-top: 15px;
+  font-size: 19px;
+  margin-right: -16px;
+}
+.main-mnu li {
+  list-style: none;
+}
+.main-mnu a {
+  color: #bbbec9;
+  padding: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: none;
+  font-weight: 200;
+  outline: none;
+}
+.main-mnu a:hover {
+  text-decoration: underline;
+}
