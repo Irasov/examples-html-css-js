@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Sequence Scroll</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script src="js/main.js" defer></script>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="filler">Контент до анимации</div>
+
+    <!-- Секция-триггер: её высота определяет длину скролла для анимации -->
+    <div class="anim-trigger">
+      <div class="sticky-wrap">
+        <canvas
+          data-sequence-basepath="https://raw.githubusercontent.com/swan4er/test-3/refs/heads/main/"
+          data-sequence-large-format="jpg"
+          data-sequence-medium-format="jpg"
+          data-sequence-small-format="jpg"
+          data-sequence-total-frames="80"
+          class="image-sequence"
+        ></canvas>
+      </div>
+    </div>
+
+    <div class="filler">Контент после анимации</div>
+
+    <script></script>
+  </body>
+</html>

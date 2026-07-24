@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Триггер-секция задаёт длину скролла.
+     Высота = "запас" скролла, за который проиграется вся анимация.
+     Чем больше vh, тем медленнее (растянутее) будет проигрываться последовательность. */
+.anim-trigger {
+  height: 500vh;
+  position: relative;
+}
+
+/* Канвас "прилипает" к вьюпорту, пока идёт скролл внутри .anim-trigger */
+.sticky-wrap {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-sequence {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Просто для примера — контент до и после анимации */
+.filler {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  font-size: 2rem;
+  background: #111;
+  color: #fff;
+}
